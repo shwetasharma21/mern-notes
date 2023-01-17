@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import Login from "./components/Login";
 import ErrorPage from "./components/ErrorPage";
+import Dashboard from "./components/Dashboard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
 			{
 				path: "login",
 				element: <Login />,
+			},
+			{
+				path: "dashboard",
+				element: <Dashboard />,
 			},
 		],
 	},

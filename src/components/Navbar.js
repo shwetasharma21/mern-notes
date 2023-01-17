@@ -1,21 +1,29 @@
+import { useNavigate, NavLink } from "react-router-dom";
+
 function Navbar() {
+	const navigate = useNavigate();
+	const handleLoginClick = () => {
+		console.log("clicked");
+		return navigate("/login");
+	};
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav className="navbar navbar-dark bg-dark">
 				<div className="container-fluid">
-					<a className="navbar-brand" href="/">
+					<NavLink className="navbar-brand" to="/">
 						Notes
-					</a>
-					<div className="collapse navbar-collapse" id="navbarText">
-						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-							<li className="nav-item">
-								<a className="nav-link" aria-current="page" href="/">
-									Home
-								</a>
-							</li>
-						</ul>
-						<button className="btn btn-outline-light">Login</button>
-					</div>
+					</NavLink>
+
+					<ul className="navbar-nav me-auto ">
+						<li className="nav-item">
+							<NavLink className="nav-link" aria-current="page" to="/dashboard">
+								Home
+							</NavLink>
+						</li>
+					</ul>
+					<button className="btn btn-outline-light" onClick={handleLoginClick}>
+						Login
+					</button>
 				</div>
 			</nav>
 		</div>
